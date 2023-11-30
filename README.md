@@ -1,1 +1,1 @@
-# react-typescript-redux-simpsons-api-
+# react-typescript-redux-simpsons-api
