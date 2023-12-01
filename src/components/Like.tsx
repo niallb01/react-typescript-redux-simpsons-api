@@ -4,15 +4,16 @@ import { SET_LIKE } from "../features/counter/characterSlice"
 
 const Like = (props) => {
   const dispatch = useDispatch()
+  const { liked, quoteText } = props
 
   return (
     <button
       className="like-btn"
       onClick={() => {
-        dispatch(SET_LIKE({ liked: !props.liked, quote: props.quoteText }))
+        dispatch(SET_LIKE({ liked: !liked, quote: quoteText }))
       }}
     >
-      {props.liked ? (
+      {liked ? (
         <span>
           <FaRegThumbsUp size="12" className="like-icon" />
           Liked

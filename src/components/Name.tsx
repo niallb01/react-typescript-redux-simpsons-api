@@ -1,7 +1,8 @@
 const Name = (props) => {
+  const { text } = props
   return (
     <>
-      <h4 className="char-name">{props.text}</h4>
+      <h4 className="char-name">{text}</h4>
     </>
   )
 }

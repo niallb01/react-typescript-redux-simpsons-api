@@ -1,7 +1,8 @@
 const Quote = (props) => {
+  const { text } = props
   return (
     <>
-      <p className="char-text">"{props.text}"</p>
+      <p className="char-text">"{text}"</p>
     </>
   )
 }
