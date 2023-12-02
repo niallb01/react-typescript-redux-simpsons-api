@@ -1,7 +1,7 @@
 import Character from "./Character"
 
 type CharactersProps = {
-  character: object
+  // character: object
   position: number
   // handleSearchInput: () => void
   // onDelete: (itemNo: ) => void

@@ -1,4 +1,9 @@
-const DeleteButton = (props) => {
+type DeleteProps = {
+  quoteText: string
+  onDelete: (quoteText: string) => void
+}
+
+const DeleteButton = (props: DeleteProps) => {
   const { onDelete, quoteText } = props
   return (
     <>

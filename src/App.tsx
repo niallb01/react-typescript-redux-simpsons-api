@@ -56,9 +56,8 @@ const App = () => {
   })
 
   const onDelete = (itemNo: string) => {
-    console.log("delete btn", itemNo)
+    // console.log("delete btn", itemNo)
     dispatch(DELETE(itemNo))
-    // console.log(typeof onDelete)
   }
 
   const onNewState = () => {
@@ -73,10 +72,10 @@ const App = () => {
         <p className="chars-result-text">There are no results...</p>
       )}
       <Characters
-        characters={characters}
+        filteredChars={filteredChars}
+        // characters={characters}
         onDelete={onDelete}
         handleSearchInput={handleSearchInput}
-        filteredChars={filteredChars}
         onNewState={onNewState}
       />
     </>

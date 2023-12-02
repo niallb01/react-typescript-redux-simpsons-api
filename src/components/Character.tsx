@@ -17,7 +17,7 @@ const Character = (props: CharacterProps) => {
   const { onDelete, characterDirection, quoteText, nameText, image, liked } =
     props
 
-  console.log("character", typeof liked)
+  // console.log("character", typeof liked)
 
   return (
     <>
