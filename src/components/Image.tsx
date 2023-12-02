@@ -1,7 +1,8 @@
 const Image = (props) => {
+  const { image } = props
   return (
     <>
-      <img src={props.image} />
+      <img src={image} />
     </>
   )
 }

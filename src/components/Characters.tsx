@@ -1,10 +1,18 @@
 import Character from "./Character"
 
-const Characters = (props) => {
+type CharactersProps = {
+  character: object
+  position: number
+  // handleSearchInput: () => void
+  // onDelete: (itemNo: ) => void
+}
+
+const Characters = (props: CharactersProps) => {
   const { handleSearchInput, onDelete, filteredChars, newState, onNewState } =
     props
 
   // && = if characters isn't undefined then try and render characters - means characters doesn't depend on app component
+  // position type is number, character type is object
   return (
     <>
       <h1 className="header">Simpsons Quote Generator</h1>
@@ -21,7 +29,8 @@ const Characters = (props) => {
 
       <div className="chars-container">
         {filteredChars &&
-          filteredChars.map((character, position) => {
+          filteredChars.map((character: object, position: number) => {
+            // console.log(filteredChars)
             return (
               <div className="character" key={character + position}>
                 <Character
