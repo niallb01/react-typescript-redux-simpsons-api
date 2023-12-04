@@ -1,9 +1,23 @@
-import { createSlice } from "@reduxjs/toolkit"
+import { PayloadAction, createSlice } from "@reduxjs/toolkit"
 
-const initialState = {
+type CharType = {
+  characterDirection: string
+  character: string
+  quote: string
+  image: string
+  liked: boolean
+}
+// ? = optional
+type InitialState = {
+  characters: CharType[]
+  search: string
+  like: boolean // ? like
+}
+
+const initialState: InitialState = {
   characters: [],
   search: "",
-  like: [false],
+  like: false, // was [false]
 }
 
 // reducer - does something based on action - modifies the state
@@ -11,19 +25,22 @@ export const characterSlice = createSlice({
   name: "characters",
   initialState,
   reducers: {
-    SET_CHARACTERS: (state, action) => {
+    SET_CHARACTERS: (state, action: PayloadAction<CharType[]>) => {
       state.characters = action.payload
     },
-    SET_SEARCH: (state, action) => {
+    SET_SEARCH: (state, action: PayloadAction<string>) => {
       state.search = action.payload
     },
-    DELETE: (state, action) => {
+    DELETE: (state, action: PayloadAction<string>) => {
       const index = state.characters.findIndex((item) => {
         return item.quote === action.payload
       })
       state.characters.splice(index, 1)
     },
-    SET_LIKE: (state, action) => {
+    SET_LIKE: (
+      state,
+      action: PayloadAction<{ quote: string; liked: boolean }>,
+    ) => {
       const index = state.characters.findIndex((item) => {
         return item.quote === action.payload.quote
       })

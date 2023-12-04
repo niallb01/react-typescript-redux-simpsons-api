@@ -16,6 +16,7 @@ const Like = (props: LikeProps) => {
       className="like-btn"
       onClick={() => {
         dispatch(SET_LIKE({ liked: !liked, quote: quoteText }))
+        console.log(liked)
       }}
     >
       {liked ? (
