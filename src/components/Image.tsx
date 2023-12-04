@@ -1,4 +1,8 @@
-const Image = (props) => {
+type ImageProps = {
+  image: string
+}
+
+const Image = (props: ImageProps) => {
   const { image } = props
   return (
     <>

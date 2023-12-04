@@ -43,6 +43,8 @@ const App = () => {
     }
   }
 
+  //   console.log("app 46", typeof getApiData())
+
   const handleSearchInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     dispatch(SET_SEARCH(e.target.value))
   }
@@ -50,13 +52,13 @@ const App = () => {
   if (!characters) return <p>Loading...</p>
 
   // character type is object
-  const filteredChars = characters.filter((character) => {
+  const filteredChars: object[] = characters.filter((character) => {
     // console.log(typeof character)
     return character.character.toLowerCase().includes(search.toLowerCase())
   })
 
   const onDelete = (itemNo: string) => {
-    // console.log("delete btn", itemNo)
+    console.log("delete btn", typeof itemNo)
     dispatch(DELETE(itemNo))
   }
 
@@ -73,7 +75,6 @@ const App = () => {
       )}
       <Characters
         filteredChars={filteredChars}
-        // characters={characters}
         onDelete={onDelete}
         handleSearchInput={handleSearchInput}
         onNewState={onNewState}

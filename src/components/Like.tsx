@@ -2,7 +2,12 @@ import { FaRegThumbsUp, FaRegThumbsDown } from "react-icons/fa"
 import { useDispatch } from "react-redux"
 import { SET_LIKE } from "../features/counter/characterSlice"
 
-const Like = (props) => {
+type LikeProps = {
+  liked: boolean
+  quoteText: string
+}
+
+const Like = (props: LikeProps) => {
   const dispatch = useDispatch()
   const { liked, quoteText } = props
 

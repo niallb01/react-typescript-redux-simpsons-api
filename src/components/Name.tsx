@@ -1,4 +1,8 @@
-const Name = (props) => {
+type NameProps = {
+  text: string
+}
+
+const Name = (props: NameProps) => {
   const { text } = props
   return (
     <>

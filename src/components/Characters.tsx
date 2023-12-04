@@ -2,15 +2,26 @@ import Character from "./Character"
 
 type CharactersProps = {
   // character: object
-  position: number
-  // handleSearchInput: () => void
-  // onDelete: (itemNo: ) => void
+  position: string
+  handleSearchInput: (e: React.ChangeEvent<HTMLInputElement>) => void
+  onDelete: (itemNo: string) => void
+  onNewState: () => void
+  newState: string
+  filteredChars: object[]
+}
+
+type CharsType = {
+  characterDirection: string
+  character: string
+  quote: string
+  image: string
+  liked: boolean
 }
 
 const Characters = (props: CharactersProps) => {
   const { handleSearchInput, onDelete, filteredChars, newState, onNewState } =
     props
-
+  // newState value string?
   // && = if characters isn't undefined then try and render characters - means characters doesn't depend on app component
   // position type is number, character type is object
   return (
@@ -29,8 +40,7 @@ const Characters = (props: CharactersProps) => {
 
       <div className="chars-container">
         {filteredChars &&
-          filteredChars.map((character: object, position: number) => {
-            // console.log(filteredChars)
+          filteredChars.map((character: CharsType, position: string) => {
             return (
               <div className="character" key={character + position}>
                 <Character

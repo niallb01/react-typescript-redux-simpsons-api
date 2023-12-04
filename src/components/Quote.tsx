@@ -1,4 +1,7 @@
-const Quote = (props) => {
+type QuoteProps = {
+  text: string
+}
+const Quote = (props: QuoteProps) => {
   const { text } = props
   return (
     <>

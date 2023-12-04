@@ -1,23 +1,21 @@
 import Name from "./Name"
 import Image from "./Image"
 import Quote from "./Quote"
-import DeleteButton from "./DeleteButton"
 import Like from "./Like"
+import DeleteButton from "./DeleteButton"
 
 type CharacterProps = {
   characterDirection: string
   quoteText: string
   nameText: string
   image: string
-  onDelete: () => void
+  onDelete: (itemNo: string) => void
   liked: boolean
 }
 
 const Character = (props: CharacterProps) => {
   const { onDelete, characterDirection, quoteText, nameText, image, liked } =
     props
-
-  // console.log("character", typeof liked)
 
   return (
     <>
