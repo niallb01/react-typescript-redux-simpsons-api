@@ -3,7 +3,7 @@ import Character from "./Character"
 type CharactersProps = {
   handleSearchInput: (e: React.ChangeEvent<HTMLInputElement>) => void
   // onDelete: (itemNo: number) => void
-  onDelete: (itemNo: number) => void
+  onDelete: (itemNo: string) => void
   onNewState: () => void
   newState: string
   filteredChars: object[]
@@ -17,7 +17,6 @@ type CharsType = {
   quote: string
   image: string
   liked: boolean
-  // position: number
   itemNo: number
   position: number
 }

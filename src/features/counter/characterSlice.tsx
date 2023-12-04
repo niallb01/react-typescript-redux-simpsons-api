@@ -8,6 +8,11 @@ type CharType = {
   liked: boolean
 }
 
+type DeleteType = {
+  quote: string
+  index: number
+}
+
 type InitialState = {
   characters: CharType[]
   search: string

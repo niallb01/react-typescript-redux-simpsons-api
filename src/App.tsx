@@ -12,7 +12,7 @@ import { toast, ToastContainer } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
 // run unit tests on app
 
-type charTypes = {
+type CharTypes = {
   itemNo: number
 }
 
@@ -59,7 +59,7 @@ const App = () => {
     return character.character.toLowerCase().includes(search.toLowerCase())
   })
 
-  const onDelete = (itemNo: number) => {
+  const onDelete = (itemNo: string) => {
     console.log("delete btn", typeof itemNo)
     dispatch(DELETE(itemNo))
   }
