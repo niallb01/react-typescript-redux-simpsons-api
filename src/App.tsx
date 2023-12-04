@@ -12,6 +12,10 @@ import { toast, ToastContainer } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
 // run unit tests on app
 
+type charTypes = {
+  itemNo: number
+}
+
 const App = () => {
   const characters = useSelector((state) => state.character.characters)
   const search = useSelector((state) => state.character.search)
@@ -43,8 +47,6 @@ const App = () => {
     }
   }
 
-  //   console.log("app 46", typeof getApiData())
-
   const handleSearchInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     dispatch(SET_SEARCH(e.target.value))
   }
@@ -57,14 +59,18 @@ const App = () => {
     return character.character.toLowerCase().includes(search.toLowerCase())
   })
 
-  const onDelete = (itemNo: string) => {
+  const onDelete = (itemNo: number) => {
     console.log("delete btn", typeof itemNo)
     dispatch(DELETE(itemNo))
   }
 
+  //   const onDelete = (index: number) => {
+  //     console.log("delete btn", typeof index)
+  //     dispatch(DELETE(index))
+  //   }
+
   const onNewState = () => {
     getApiData()
-    // console.log(typeof onNewState)
   }
 
   return (

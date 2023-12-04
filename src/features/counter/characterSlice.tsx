@@ -7,7 +7,7 @@ type CharType = {
   image: string
   liked: boolean
 }
-// ? = optional
+
 type InitialState = {
   characters: CharType[]
   search: string

@@ -9,17 +9,28 @@ type CharacterProps = {
   quoteText: string
   nameText: string
   image: string
-  onDelete: (itemNo: string) => void
+  // onDelete: (itemNo: string) => void
+  onDelete: (itemNo: number) => void
   liked: boolean
+  position: number
+  quoteNo: number
 }
 
 const Character = (props: CharacterProps) => {
-  const { onDelete, characterDirection, quoteText, nameText, image, liked } =
-    props
+  const {
+    onDelete,
+    characterDirection,
+    quoteText,
+    nameText,
+    image,
+    liked,
+    position,
+  } = props
 
   return (
     <>
       <div className="like-btn-container">
+        {/* <DeleteButton quoteText={quoteText} index={index} onDelete={onDelete} /> */}
         <DeleteButton quoteText={quoteText} onDelete={onDelete} />
         <Like quoteText={quoteText} liked={liked} />
       </div>
