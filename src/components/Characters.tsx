@@ -5,7 +5,7 @@ type CharactersProps = {
   onDelete: (itemNo: string) => void
   onNewState: () => void
   newState: string
-  filteredChars: object[]
+  filteredChars: CharsType[]
   itemNo: number
   position: number
 }
@@ -44,7 +44,7 @@ const Characters = (props: CharactersProps) => {
         {filteredChars &&
           filteredChars.map((character: CharsType, position: number) => {
             return (
-              <div className="character" key={character + position}>
+              <div className="character" key={character.quote + position}>
                 <Character
                   liked={character.liked}
                   onDelete={onDelete}

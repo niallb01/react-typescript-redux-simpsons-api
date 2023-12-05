@@ -7,25 +7,17 @@ import {
   DELETE,
 } from "./features/counter/characterSlice"
 import "./App.css"
-// import { useDispatch, useSelector } from "react-redux"
 import { useAppSelector, useAppDispatch } from "./app/hooks"
 import { toast, ToastContainer } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
 // run unit tests on app
 
-// type CharTypes = {
-//   itemNo: number
-// }
+// type here?
 
 const App = () => {
-  //   const characters = useSelector((state) => state.character.characters)
-  //   const search = useSelector((state) => state.character.search)
-  // ts
   const characters = useAppSelector((state) => state.character.characters)
   const search = useAppSelector((state) => state.character.search)
 
-  //   const dispatch = useDispatch()
-  // ts
   const dispatch = useAppDispatch()
 
   useEffect(() => {
@@ -59,12 +51,12 @@ const App = () => {
 
   if (!characters) return <p>Loading...</p>
 
-  // character type is object
-  const filteredChars: object[] = characters.filter((character) => {
-    // console.log(typeof character)
+  // this shouldn't be type any! I know it's an object
+  const filteredChars: any = characters.filter((character) => {
     return character.character.toLowerCase().includes(search.toLowerCase())
   })
 
+  // itemNo should be number! in characterSlice PayloadAction is <string>
   const onDelete = (itemNo: string) => {
     // console.log("delete btn", typeof itemNo)
     dispatch(DELETE(itemNo))
@@ -85,6 +77,10 @@ const App = () => {
         onDelete={onDelete}
         handleSearchInput={handleSearchInput}
         onNewState={onNewState}
+        // below? squiffy
+        newState={""}
+        itemNo={0}
+        position={0}
       />
     </>
   )
