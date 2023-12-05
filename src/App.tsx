@@ -64,11 +64,6 @@ const App = () => {
     dispatch(DELETE(itemNo))
   }
 
-  //   const onDelete = (index: number) => {
-  //     console.log("delete btn", typeof index)
-  //     dispatch(DELETE(index))
-  //   }
-
   const onNewState = () => {
     getApiData()
   }

@@ -1,8 +1,5 @@
 type DeleteProps = {
   quoteText: string
-  // onDelete: (quoteText: string) => void
-  // quoteText: string
-  // itemNo: number
   onDelete: (quoteText: string) => void
 }
 

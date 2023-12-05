@@ -2,7 +2,6 @@ import Character from "./Character"
 
 type CharactersProps = {
   handleSearchInput: (e: React.ChangeEvent<HTMLInputElement>) => void
-  // onDelete: (itemNo: number) => void
   onDelete: (itemNo: string) => void
   onNewState: () => void
   newState: string
@@ -53,7 +52,6 @@ const Characters = (props: CharactersProps) => {
                   nameText={character.character}
                   quoteText={character.quote}
                   image={character.image}
-                  // itemNo={position}
                   itemNo={position}
                 />
               </div>
