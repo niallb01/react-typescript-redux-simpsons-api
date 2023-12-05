@@ -11,7 +11,7 @@ type CharType = {
 type InitialState = {
   characters: CharType[]
   search: string
-  like: boolean // ? like
+  like: boolean
 }
 
 const initialState: InitialState = {

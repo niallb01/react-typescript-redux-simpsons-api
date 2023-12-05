@@ -7,20 +7,26 @@ import {
   DELETE,
 } from "./features/counter/characterSlice"
 import "./App.css"
-import { useDispatch, useSelector } from "react-redux"
+// import { useDispatch, useSelector } from "react-redux"
+import { useAppSelector, useAppDispatch } from "./app/hooks"
 import { toast, ToastContainer } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
 // run unit tests on app
 
-type CharTypes = {
-  itemNo: number
-}
+// type CharTypes = {
+//   itemNo: number
+// }
 
 const App = () => {
-  const characters = useSelector((state) => state.character.characters)
-  const search = useSelector((state) => state.character.search)
+  //   const characters = useSelector((state) => state.character.characters)
+  //   const search = useSelector((state) => state.character.search)
+  // ts
+  const characters = useAppSelector((state) => state.character.characters)
+  const search = useAppSelector((state) => state.character.search)
 
-  const dispatch = useDispatch()
+  //   const dispatch = useDispatch()
+  // ts
+  const dispatch = useAppDispatch()
 
   useEffect(() => {
     getApiData()
@@ -60,7 +66,7 @@ const App = () => {
   })
 
   const onDelete = (itemNo: string) => {
-    console.log("delete btn", typeof itemNo)
+    // console.log("delete btn", typeof itemNo)
     dispatch(DELETE(itemNo))
   }
 

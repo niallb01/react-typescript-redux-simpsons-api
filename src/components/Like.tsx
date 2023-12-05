@@ -1,5 +1,6 @@
 import { FaRegThumbsUp, FaRegThumbsDown } from "react-icons/fa"
 import { useDispatch } from "react-redux"
+import { useAppDispatch } from "../app/hooks"
 import { SET_LIKE } from "../features/counter/characterSlice"
 
 type LikeProps = {
@@ -8,7 +9,8 @@ type LikeProps = {
 }
 
 const Like = (props: LikeProps) => {
-  const dispatch = useDispatch()
+  // const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
   const { liked, quoteText } = props
 
   return (
