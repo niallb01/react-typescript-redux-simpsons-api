@@ -11,7 +11,7 @@ import { useAppSelector, useAppDispatch } from "./app/hooks"
 import { toast, ToastContainer } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
 // run unit tests on app
-import CharType from "./features/counter/characterSlice"
+// import CharType from "./features/counter/characterSlice"
 
 // type here? should be coming from the store?
 type CharType = {
@@ -62,7 +62,7 @@ const App = () => {
   if (!characters) return <p>Loading...</p>
 
   // this shouldn't be type any! I know it's an array of objects
-  const filteredChars = characters.filter((character) => {
+  const filteredChars: CharType[] = characters.filter((character) => {
     return character.character.toLowerCase().includes(search.toLowerCase())
   })
 
