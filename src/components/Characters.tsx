@@ -23,6 +23,8 @@ type CharsType = {
 const Characters = (props: CharactersProps) => {
   const { handleSearchInput, onDelete, filteredChars, newState, onNewState } =
     props
+
+  // console.log(CharType)
   // newState value string?
   // && = if characters isn't undefined then try and render characters - means characters doesn't depend on app component
   // position type is number, character type is object
@@ -53,6 +55,7 @@ const Characters = (props: CharactersProps) => {
                   quoteText={character.quote}
                   image={character.image}
                   itemNo={position}
+                  position={position}
                 />
               </div>
             )

@@ -6,6 +6,8 @@ type CharType = {
   quote: string
   image: string
   liked: boolean
+  itemNo: number
+  position: number
 }
 
 type InitialState = {
@@ -22,6 +24,7 @@ const initialState: InitialState = {
 
 // reducer - does something based on action - modifies the state
 export const characterSlice = createSlice({
+  // name: CharType[]
   name: "characters",
   initialState,
   reducers: {

@@ -12,6 +12,7 @@ type CharacterProps = {
   onDelete: (itemNo: string) => void
   liked: boolean
   itemNo: number
+  position: number
 }
 
 const Character = (props: CharacterProps) => {
