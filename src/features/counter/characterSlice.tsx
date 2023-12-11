@@ -19,12 +19,11 @@ type InitialState = {
 const initialState: InitialState = {
   characters: [],
   search: "",
-  like: false, // was [false]
+  like: false,
 }
 
 // reducer - does something based on action - modifies the state
 export const characterSlice = createSlice({
-  // name: CharType[]
   name: "characters",
   initialState,
   reducers: {
@@ -34,12 +33,23 @@ export const characterSlice = createSlice({
     SET_SEARCH: (state, action: PayloadAction<string>) => {
       state.search = action.payload
     },
-    DELETE: (state, action: PayloadAction<string>) => {
+
+    // DELETE: (state, action: PayloadAction<string>) => {
+    //   const index = state.characters.findIndex((item) => {
+    //     return item.quote === action.payload
+    //   })
+    //   state.characters.splice(index, 1)
+    // },
+
+    // every item/quote has an itemNo in chars array
+    DELETE: (state, action: PayloadAction<number>) => {
       const index = state.characters.findIndex((item) => {
-        return item.quote === action.payload
+        return item.itemNo === action.payload
       })
+
       state.characters.splice(index, 1)
     },
+
     SET_LIKE: (
       state,
       action: PayloadAction<{ quote: string; liked: boolean }>,

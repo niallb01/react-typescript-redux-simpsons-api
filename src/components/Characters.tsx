@@ -2,7 +2,8 @@ import Character from "./Character"
 
 type CharactersProps = {
   handleSearchInput: (e: React.ChangeEvent<HTMLInputElement>) => void
-  onDelete: (itemNo: string) => void
+  // onDelete: (itemNo: string) => void
+  onDelete: (itemNo: number) => void
   onNewState: () => void
   newState: string
   filteredChars: CharsType[]
@@ -23,11 +24,7 @@ type CharsType = {
 const Characters = (props: CharactersProps) => {
   const { handleSearchInput, onDelete, filteredChars, newState, onNewState } =
     props
-
-  // console.log(CharType)
-  // newState value string?
   // && = if characters isn't undefined then try and render characters - means characters doesn't depend on app component
-  // position type is number, character type is object
   return (
     <>
       <h1 className="header">Simpsons Quote Generator</h1>

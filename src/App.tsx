@@ -11,9 +11,7 @@ import { useAppSelector, useAppDispatch } from "./app/hooks"
 import { toast, ToastContainer } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
 // run unit tests on app
-// import CharType from "./features/counter/characterSlice"
 
-// type here? should be coming from the store?
 type CharType = {
   characterDirection: string
   character: string
@@ -61,14 +59,17 @@ const App = () => {
 
   if (!characters) return <p>Loading...</p>
 
-  // this shouldn't be type any! I know it's an array of objects
   const filteredChars: CharType[] = characters.filter((character) => {
     return character.character.toLowerCase().includes(search.toLowerCase())
   })
 
-  // itemNo should be number! in characterSlice PayloadAction is <string> - quote
-  const onDelete = (itemNo: string) => {
-    // console.log("delete btn", typeof itemNo)
+  // const onDelete = (itemNo: string) => {
+  //   console.log("app", typeof itemNo)
+  //   dispatch(DELETE(itemNo))
+  // }
+
+  const onDelete = (itemNo: number) => {
+    console.log("app", itemNo, typeof itemNo)
     dispatch(DELETE(itemNo))
   }
 
@@ -87,7 +88,6 @@ const App = () => {
         onDelete={onDelete}
         handleSearchInput={handleSearchInput}
         onNewState={onNewState}
-        // below - squiffy
         newState={""}
         itemNo={0}
         position={0}
