@@ -1,19 +1,16 @@
 type DeleteProps = {
-  // quoteText: string
-  // onDelete: (quoteText: string) => void
-
-  itemNo: number
-  onDelete: (itemNo: number) => void
+  quoteText: string
+  onDelete: (quoteText: string) => void
 }
 
 const DeleteButton = (props: DeleteProps) => {
-  const { onDelete, itemNo } = props
+  const { onDelete, quoteText } = props
   return (
     <>
       <button
         className="delete-char"
         onClick={() => {
-          onDelete(itemNo)
+          onDelete(quoteText)
         }}
       >
         X

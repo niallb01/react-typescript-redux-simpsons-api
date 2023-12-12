@@ -10,7 +10,6 @@ import "./App.css"
 import { useAppSelector, useAppDispatch } from "./app/hooks"
 import { toast, ToastContainer } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
-// run unit tests on app
 
 type CharType = {
   characterDirection: string
@@ -19,7 +18,6 @@ type CharType = {
   image: string
   liked: boolean
   itemNo: number
-  position: number
 }
 
 const App = () => {
@@ -63,13 +61,7 @@ const App = () => {
     return character.character.toLowerCase().includes(search.toLowerCase())
   })
 
-  // const onDelete = (itemNo: string) => {
-  //   console.log("app", typeof itemNo)
-  //   dispatch(DELETE(itemNo))
-  // }
-
-  const onDelete = (itemNo: number) => {
-    console.log("app", itemNo, typeof itemNo)
+  const onDelete = (itemNo: string) => {
     dispatch(DELETE(itemNo))
   }
 
@@ -89,8 +81,6 @@ const App = () => {
         handleSearchInput={handleSearchInput}
         onNewState={onNewState}
         newState={""}
-        itemNo={0}
-        position={0}
       />
     </>
   )

@@ -7,7 +7,6 @@ type CharType = {
   image: string
   liked: boolean
   itemNo: number
-  position: number
 }
 
 type InitialState = {
@@ -33,23 +32,13 @@ export const characterSlice = createSlice({
     SET_SEARCH: (state, action: PayloadAction<string>) => {
       state.search = action.payload
     },
-
-    // DELETE: (state, action: PayloadAction<string>) => {
-    //   const index = state.characters.findIndex((item) => {
-    //     return item.quote === action.payload
-    //   })
-    //   state.characters.splice(index, 1)
-    // },
-
-    // every item/quote has an itemNo in chars array
-    DELETE: (state, action: PayloadAction<number>) => {
+    // find item in characters array by appending quote and delete from array
+    DELETE: (state, action: PayloadAction<string>) => {
       const index = state.characters.findIndex((item) => {
-        return item.itemNo === action.payload
+        return item.quote === action.payload
       })
-
       state.characters.splice(index, 1)
     },
-
     SET_LIKE: (
       state,
       action: PayloadAction<{ quote: string; liked: boolean }>,
