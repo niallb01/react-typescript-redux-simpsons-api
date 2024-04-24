@@ -10,17 +10,18 @@ import "./App.css"
 import { useAppSelector, useAppDispatch } from "./app/hooks"
 import { toast, ToastContainer } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
+import { CharType } from "./types"
 
-type CharType = {
-  characterDirection: string
-  character: string
-  quote: string
-  image: string
-  liked: boolean
-  itemNo: number
-}
+// type CharType = {
+//   characterDirection: string
+//   character: string
+//   quote: string
+//   image: string
+//   liked: boolean
+//   itemNo: number
+// }
 
-const App = () => {
+export const App = () => {
   const characters = useAppSelector((state) => state.character.characters)
   const search = useAppSelector((state) => state.character.search)
 
@@ -35,10 +36,10 @@ const App = () => {
       const res = await axios.get(
         "https://thesimpsonsquoteapi.glitch.me/quotes?count=20",
       )
-      dispatch(SET_CHARACTERS(res.data))
+      dispatch(SET_CHARACTERS(res.data)) //dispatch message to store
     } catch (error) {
       console.log("Error", error)
-      toast.error("The Api is down, please try again later.", {
+      toast.error("The API is down, please try again later.", {
         position: toast.POSITION.TOP_CENTER,
         autoClose: 1500,
         hideProgressBar: false,

@@ -193,4 +193,8 @@ img {
   .character {
     height: fit-content;
   }
+
+  .like-btn {
+    margin-left: 250px;
+  }
 }
