@@ -3,11 +3,6 @@ import { useAppDispatch } from "../app/hooks"
 import { SET_LIKE } from "../features/counter/characterSlice"
 import { LikeProps } from "../types"
 
-// type LikeProps = {
-//   liked: boolean
-//   quoteText: string
-// }
-
 const Like = (props: LikeProps) => {
   const dispatch = useAppDispatch()
   const { liked, quoteText } = props

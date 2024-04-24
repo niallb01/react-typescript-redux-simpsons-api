@@ -12,15 +12,6 @@ import { toast, ToastContainer } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
 import { CharType } from "./types"
 
-// type CharType = {
-//   characterDirection: string
-//   character: string
-//   quote: string
-//   image: string
-//   liked: boolean
-//   itemNo: number
-// }
-
 export const App = () => {
   const characters = useAppSelector((state) => state.character.characters)
   const search = useAppSelector((state) => state.character.search)

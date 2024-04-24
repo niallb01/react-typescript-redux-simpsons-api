@@ -5,16 +5,6 @@ import Like from "./Like"
 import DeleteButton from "./DeleteButton"
 import { CharacterProps } from "../types"
 
-// type CharacterProps = {
-//   characterDirection: string
-//   quoteText: string
-//   nameText: string
-//   image: string
-//   onDelete: (itemNo: string) => void
-//   liked: boolean
-//   itemNo: number
-// }
-
 const Character = (props: CharacterProps) => {
   const { onDelete, characterDirection, quoteText, nameText, image, liked } =
     props
